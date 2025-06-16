@@ -188,7 +188,7 @@ export const EXPERIENCES = [
     title: "React.js Developer",
     company: "Monkoodog LLP",
     logo: monkoodogLogo,
-    period: "Dec 2023 - Jan 2024",
+    period: "Dec 2023 - Jun 2024",
     location: "Gurugram, Haryana",
     description: "Led frontend development efforts focusing on high-performance React applications.",
     achievements: [
