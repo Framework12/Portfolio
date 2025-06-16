@@ -1,0 +1,343 @@
+
+/* Hero Component Styles */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.hero-background-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.6));
+  transition: transform 0.1s ease-out;
+}
+
+/* Floating elements styling */
+.hero-floating-elements {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.hero-circle-1 {
+  width: 300px;
+  height: 300px;
+  background-color: var(--portfolio-peach);
+  left: -50px;
+  top: 20%;
+  animation: float-slow 15s ease-in-out infinite, rotate-slow 30s linear infinite;
+}
+
+.hero-circle-2 {
+  width: 200px;
+  height: 200px;
+  background-color: var(--portfolio-lavender);
+  right: 10%;
+  bottom: 15%;
+  animation: float-slow 12s ease-in-out infinite 2s, rotate-slow 25s linear infinite;
+}
+
+.hero-floating-square {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-color: var(--portfolio-sage);
+  right: 5%;
+  top: 20%;
+  opacity: 0.1;
+  transform: rotate(45deg);
+  animation: float-slow 20s ease-in-out infinite 1s, rotate-reverse 40s linear infinite;
+}
+
+.hero-floating-donut {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 25px solid var(--portfolio-cream);
+  border-radius: 50%;
+  left: 15%;
+  bottom: 20%;
+  opacity: 0.1;
+  animation: float-slow 18s ease-in-out infinite 3s, pulse-slow 6s ease-in-out infinite;
+}
+
+.hero-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--portfolio-navy);
+  transition: transform 0.2s ease-out;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+}
+
+.hero-name {
+  background-image: linear-gradient(to right, var(--portfolio-navy), var(--portfolio-lavender));
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.hero-subtitle-container {
+  margin-bottom: 2rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #4b5563;
+  max-width: 36rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  min-height: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+.hero-typing-cursor {
+  margin-left: 0.25rem;
+  display: inline-block;
+  width: 0.25rem;
+  height: 1.5rem;
+  background-color: var(--portfolio-navy);
+  transition-property: opacity;
+  transition-duration: 100ms;
+}
+
+.cursor-visible {
+  opacity: 1;
+}
+
+.cursor-hidden {
+  opacity: 0;
+}
+
+.hero-specialization {
+  font-size: 1.25rem;
+  color: #4b5563;
+  max-width: 36rem;
+  margin: 0.5rem auto 0;
+}
+
+@media (min-width: 768px) {
+  .hero-specialization {
+    font-size: 1.5rem;
+  }
+}
+
+.hero-specialty {
+  color: var(--portfolio-navy);
+  font-weight: 500;
+  position: relative;
+}
+
+.hero-specialty::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--portfolio-lavender);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+  animation: underline-appear 1s ease-out forwards 0.3s;
+}
+
+.hero-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .hero-buttons-container {
+    flex-direction: row;
+  }
+}
+
+.hero-button {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.hero-button:active {
+  transform: translateY(-2px);
+}
+
+@media (min-width: 640px) {
+  .hero-button {
+    width: auto;
+  }
+}
+
+.hero-button-content {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-button-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.5s ease;
+  transform: translateX(-100%);
+}
+
+.hero-button-overlay-dark {
+  background-color: var(--portfolio-navy);
+}
+
+.hero-button:hover .hero-button-overlay {
+  opacity: 0.25;
+  transform: translateX(0);
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 20;
+}
+
+.hero-scroll-indicator:hover {
+  transform: translateX(-50%) translateY(-5px);
+}
+
+.hero-scroll-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-scroll-icon {
+  color: var(--portfolio-navy);
+  position: relative;
+  z-index: 2;
+}
+
+.hero-scroll-pulse {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--portfolio-navy);
+  opacity: 0.1;
+  z-index: 1;
+  animation: pulse-animation 2s infinite;
+}
+
+/* Animations for hero section */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotate-reverse {
+  from { transform: rotate(45deg); }
+  to { transform: rotate(-315deg); }
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.1;
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.2; }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes underline-appear {
+  from {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}

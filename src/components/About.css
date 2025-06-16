@@ -1,0 +1,319 @@
+/* About Component Styles */
+.about-section {
+  padding: 5rem 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about-image-container {
+  position: relative;
+}
+
+.about-profile-image {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-out;
+  cursor: pointer;
+}
+
+.about-profile-image:hover {
+  box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.15), 0 15px 15px -5px rgba(0, 0, 0, 0.08);
+}
+
+.about-profile-image:hover .about-photo-overlay {
+  opacity: 1;
+}
+
+.about-image-placeholder {
+  aspect-ratio: 1/1;
+  background-color: var(--portfolio-peach);
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-icon-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--portfolio-navy);
+  opacity: 0.2;
+  position: relative;
+}
+
+.about-profile-photo {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 1rem;
+  display: block;
+}
+
+.about-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+  border-radius: 1rem;
+  gap: 0.5rem;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.about-image-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 40%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.1) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.8s ease-out;
+  pointer-events: none;
+}
+
+.about-image-shine-active {
+  transform: translateX(100%);
+}
+
+.about-decoration-top {
+  position: absolute;
+  top: -1.5rem;
+  left: -1.5rem;
+  width: 6rem;
+  height: 6rem;
+  background-color: var(--portfolio-sage);
+  border-radius: 0.75rem;
+  transform: rotate(12deg);
+  z-index: 0;
+  opacity: 0.6;
+  transition: transform 0.3s ease-out;
+}
+
+.about-decoration-bottom {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  width: 6rem;
+  height: 6rem;
+  background-color: var(--portfolio-lavender);
+  border-radius: 0.75rem;
+  transform: rotate(-12deg);
+  z-index: 0;
+  opacity: 0.6;
+  transition: transform 0.3s ease-out;
+}
+
+.about-info-card {
+  position: absolute;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: transform 0.5s ease-out, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.about-info-card:hover {
+  box-shadow: 0 15px 20px -3px rgba(0, 0, 0, 0.15), 0 8px 10px -2px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.about-info-card-location {
+  top: 1.5rem;
+  right: -2.5rem;
+}
+
+.about-info-card-experience {
+  bottom: -2.5rem;
+  left: -2.5rem;
+}
+
+.about-info-card-projects {
+  top: 50%;
+  right: 0;
+  transform: translateX(50%) translateY(-50%);
+}
+
+.about-info-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.about-info-icon {
+  color: var(--portfolio-navy);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-title-container {
+  margin-bottom: 1.5rem;
+}
+
+.about-subtitle-animated {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-subtitle-animated::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--portfolio-navy);
+  transform: translateX(-100%);
+  animation: slide-in 0.8s forwards 0.2s;
+}
+
+.about-title-animated {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.about-title-animated::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transform: translateX(0);
+  animation: reveal 1s forwards 0.5s;
+}
+
+.about-text-content {
+  opacity: 0;
+  animation: fade-up 0.8s forwards 0.8s;
+}
+
+.about-text {
+  font-size: 1.125rem;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 2px solid transparent;
+  transition: border-left-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.about-text:hover {
+  border-left-color: var(--portfolio-navy);
+  padding-left: 1.5rem;
+}
+
+.about-button-animated {
+  opacity: 0;
+  animation: fade-up 0.8s forwards 1.2s;
+}
+
+.about-resume-button {
+  padding-top: 1rem;
+}
+
+.about-download-button {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.about-download-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.about-download-button::after {
+  content: '↓';
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.about-download-button:hover::after {
+  transform: translateY(5px);
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes reveal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.delay-100 {
+  animation-delay: 0.3s !important;
+}
+
+.delay-200 {
+  animation-delay: 0.5s !important;
+}
+
+.delay-300 {
+  animation-delay: 0.7s !important;
+}
