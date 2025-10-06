@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
+
 import {
   Send,
   Mail,
   Phone,
   MapPin,
-  Github,
+  Github, 
   Linkedin,
   MessageCircle,
 } from "lucide-react";

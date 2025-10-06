@@ -12,25 +12,22 @@ const Hero = () => {
   const [showCursor, setShowCursor] = useState(true);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   
-  // Multiple texts to cycle through
   const texts = [
     'I build responsive web applications with React.js',
     'I create robust backend systems with Node.js',
+    'I design accessible and user-centered interfaces',
+    'I integrate ML models for practical products',
   ];
   
-  // Ref for the title element to apply parallax
   const titleRef = useRef<HTMLHeadingElement>(null);
 
-  // Mouse movement parallax effect
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      // Calculate mouse position relative to the center of the screen
       const x = (e.clientX - window.innerWidth / 2) / 50;
       const y = (e.clientY - window.innerHeight / 2) / 50;
       
       setMousePosition({ x, y });
-      
-      // Apply parallax to the title if ref exists
+    
       if (titleRef.current) {
         titleRef.current.style.transform = `translate(${x * -0.5}px, ${y * -0.5}px)`;
       }
@@ -42,7 +39,6 @@ const Hero = () => {
     };
   }, []);
 
-  // Scroll detection
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -54,35 +50,29 @@ const Hero = () => {
     };
   }, []);
 
-  // Typing effect logic with multiple text cycling
   useEffect(() => {
     const currentText = texts[currentTextIndex];
     
     const typeText = () => {
       if (!isDeleting) {
-        // Typing forward
         if (typedText.length < currentText.length) {
           setTypedText(currentText.substring(0, typedText.length + 1));
         } else {
-          // Pause at the end before deleting
           setTypingComplete(true);
           setTimeout(() => {
             setIsDeleting(true);
           }, 2000);
         }
       } else {
-        // Deleting
         if (typedText.length > 0) {
           setTypedText(currentText.substring(0, typedText.length - 1));
         } else {
-          // Move to next text
           setIsDeleting(false);
           setCurrentTextIndex((currentTextIndex + 1) % texts.length);
         }
       }
     };
-    
-    // Variable typing speed: faster when deleting, slower when typing
+
     const typingSpeed = isDeleting ? 30 : Math.random() * 40 + 50;
     
     // Slight pause at the end of deleting before starting a new word
@@ -131,6 +121,7 @@ const Hero = () => {
   return (
     <section id="hero" className="hero-section">
       <div className="hero-background">
+        <div className="hero-spotlight" aria-hidden="true"></div>
         {/* Background gradient overlay with dynamic mouse movement */}
         <div 
           className="hero-background-overlay"
@@ -153,14 +144,16 @@ const Hero = () => {
           <h1 
             ref={titleRef}
             className="hero-title animate-slide-down"
+            role="heading"
+            aria-level={1}
           >
             Hello, I'm <span className="hero-name">Chandan!</span>
           </h1>
           
           <div className="hero-subtitle-container animate-slide-up delay-200">
             <p className="hero-subtitle">
-              <span>{typedText}</span>
-              <span className={`hero-typing-cursor ${showCursor ? 'cursor-visible' : 'cursor-hidden'}`}></span>
+              <span aria-live="polite" aria-atomic="true">{typedText}</span>
+              <span className={`hero-typing-cursor ${showCursor ? 'cursor-visible' : 'cursor-hidden'}`} aria-hidden="true"></span>
             </p>
             {typingComplete && !isDeleting && (
               <p className="hero-specialization animate-fade-in">
@@ -192,6 +185,12 @@ const Hero = () => {
       <div 
         className={`hero-scroll-indicator ${scrolled ? 'hero-scroll-hidden' : ''}`}
         onClick={handleScrollDown}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') handleScrollDown();
+        }}
+        role="button"
+        tabIndex={0}
+        aria-label="Scroll to About section"
       >
         <div className="hero-scroll-pulse"></div>
         <ArrowDown className="hero-scroll-icon animate-bounce" size={32} />

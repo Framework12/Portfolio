@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
@@ -11,10 +10,8 @@ const ThreeScene = () => {
 
     let animationFrameId: number;
     
-    // Scene setup
     const scene = new THREE.Scene();
     
-    // Camera setup with perspective
     const camera = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,

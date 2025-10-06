@@ -2,6 +2,8 @@
 .contact-section {
   padding: 5rem 0;
   position: relative;
+  /* subtle radial spotlight */
+  background: radial-gradient(circle at 15% 10%, rgba(99,102,241,0.04), transparent 10%), radial-gradient(circle at 90% 85%, rgba(249,115,22,0.02), transparent 12%);
 }
 
 .contact-header {
@@ -57,6 +59,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
+  align-items: start;
 }
 
 @media (min-width: 1024px) {
@@ -69,6 +72,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.contact-info-card {
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.45));
+  border: 1px solid rgba(99,102,241,0.06);
+  box-shadow: 0 6px 20px rgba(16,24,40,0.04);
 }
 
 .contact-intro-title {
@@ -97,11 +109,11 @@
 }
 
 .contact-detail-icon-container {
-  padding: 0.75rem;
+  padding: 0.6rem;
   border-radius: 9999px;
-  background: rgba(var(--portfolio-cream-rgb), 0.1);
-  border: 1px solid rgba(var(--portfolio-cream-rgb), 0.2);
-  transition: all 0.3s ease;
+  background: rgba(var(--portfolio-cream-rgb), 0.08);
+  border: 1px solid rgba(var(--portfolio-cream-rgb), 0.16);
+  transition: transform 160ms ease, background 160ms ease;
 }
 
 .contact-detail-item:hover .contact-detail-icon-container {
@@ -138,9 +150,9 @@
 }
 
 .contact-detail-value:hover {
-  color: var(--portfolio-cream);
-  text-decoration: none;
-  transform: translateX(4px);
+  color: var(--portfolio-navy);
+  text-decoration: underline;
+  transform: translateX(3px);
 }
 
 .contact-phone-links {
@@ -179,18 +191,37 @@
 }
 
 .contact-social-link {
-  padding: 0.75rem;
+  width: 44px;
+  height: 44px;
+  display: inline-grid;
+  place-items: center;
   border-radius: 9999px;
-  background-color: var(--portfolio-navy);
-  transition: transform 0.3s ease;
+  /* fallback if the color variable isn't available */
+  background-color: var(--portfolio-navy, #111827);
+  color: #fff;
+  transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
 }
 
 .contact-social-link:hover {
-  transform: scale(1.1);
+  transform: translateY(-3px);
+  /* use background-image for gradient, keep a solid fallback */
+  background-color: rgba(var(--portfolio-navy-rgb), 1);
+  background-image: linear-gradient(90deg,#111827,#374151);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.12);
 }
 
 .contact-social-icon {
   color: white;
+  /* make sure lucide SVG uses currentColor for stroke and fill */
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ensure svg inside the social link inherits anchor color */
+.contact-social-link svg {
+  stroke: currentColor;
+  fill: currentColor;
 }
 
 .contact-social-icon.whatsapp-icon {
@@ -205,8 +236,11 @@
 .contact-form-container {
   padding: 2rem;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  border: 1px solid #f3f4f6;
+  /* glass card */
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.75));
+  border: 1px solid rgba(99,102,241,0.06);
+  box-shadow: 0 12px 30px rgba(16,24,40,0.06);
+  backdrop-filter: blur(6px) saturate(120%);
 }
 
 .contact-form-group {
@@ -232,8 +266,8 @@
 
 .contact-form-input:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--portfolio-navy);
-  border-color: transparent;
+  box-shadow: 0 6px 18px rgba(59,130,246,0.12);
+  border-color: rgba(59,130,246,0.25);
 }
 
 .contact-form-textarea {
@@ -247,21 +281,33 @@
 
 .contact-form-textarea:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--portfolio-navy);
-  border-color: transparent;
+  box-shadow: 0 6px 18px rgba(59,130,246,0.12);
+  border-color: rgba(59,130,246,0.25);
 }
 
 .contact-form-button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.3s ease;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
   position: relative;
+  padding: 0.65rem 1rem;
+  border-radius: 0.6rem;
+  background: linear-gradient(90deg,#111827,#374151);
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+.contact-form-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(2,6,23,0.12);
 }
 
 .contact-form-button:disabled {
   opacity: 0.7;
   cursor: not-allowed;
+  transform: none;
 }
 
 .contact-form-spinner {
@@ -312,4 +358,14 @@
   font-size: 0.875rem;
   margin-top: 0.25rem;
   display: block;
+}
+
+/* Focus styles */
+.contact-social-link:focus-visible,
+.expand-toggle:focus-visible,
+.contact-form-input:focus-visible,
+.contact-form-textarea:focus-visible,
+.contact-form-button:focus-visible {
+  outline: 3px solid rgba(59,130,246,0.18);
+  outline-offset: 3px;
 }

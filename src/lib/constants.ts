@@ -14,6 +14,7 @@ import ottImage from '../assets/ott .png';
 import bytepulseImage from '../assets/bytepulse.png';
 import bookExchangeImage from '../assets/bookExchnage.png';
 import dashboardImage from '../assets/Dashboard.png';
+import healthPlusImage from '../assets/HealthPlus.png';
 
 export const NAVBAR_LINKS = [
   { label: "About", href: "#about" },
@@ -95,6 +96,20 @@ export const PROJECTS = [
     ]
   },
   {
+    title: " Health Plus",
+    description: "A healthcare dashboard and monitoring platform that provides insights into patient health metrics and visualizations to help clinicians and users track wellbeing.",
+    technologies: ["JavaScript", "React + TypeScript", "Tailwind CSS"],
+    image: healthPlusImage,
+    links: [
+      { icon: ExternalLink, url: "https://health-plus-one-kappa.vercel.app/" },
+      { icon: Github, url: "https://github.com/Framework12/HealthPlus" }
+    ],
+    achievements: [
+      "Built interactive visualizations to track health metrics",
+      "Integrated REST APIs to fetch and aggregate patient data"
+    ]
+  },
+  {
     title: "OTT Streaming Platform",
     description: "A video streaming platform, using a custom video player and following the HLS protocol for streaming.",
     technologies: ["React.js", "Node.js", "MongoDB", "TMDB API", "CSS", "IMDB API"],
@@ -121,35 +136,6 @@ export const PROJECTS = [
       "Implemented secure user authentication and authorization for buyers and sellers",
       "Developed a responsive UI with real-time book listing updates and search functionality",
       "Integrated payment processing and messaging system for seamless transactions"
-    ]
-  },
-  {
-    title: "BytePulse",
-    description: "An AI-powered news app using React.js and Rapid API, delivering real-time tech news updates.",
-    technologies: ["React.js", "Node.js", "Rapid API", "CSS", "GitHub"],
-    image: bytepulseImage,
-    links: [
-      { icon: Github, url: "https://github.com/Framework12/BytePulse" },
-      { icon: ExternalLink, url: "https://byte-pulse-ten.vercel.app/" }
-    ],
-    achievements: [
-      "Developed an AI-powered news app using React.js and Rapid APIs, delivering real-time tech news updates",
-      "Enhanced UI/UX by implementing 5+ curated content sections, improving readability and engagement"
-    ]
-  },
-  {
-    title: "Cognizant ML Program Project",
-    description: "A comprehensive machine learning project focused on analyzing sales data, predicting trends, and enhancing user experiences. The project demonstrates practical applications of ML in driving strategic business decisions and improving customer satisfaction.",
-    technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Machine Learning"],
-    image: "https://placehold.co/600x400/e9ecef/495057?text=ML+Analytics&font=roboto",
-    links: [
-      { icon: Github, url: "https://github.com/Framework12/Cognizant_ML_Project" }
-    ],
-    achievements: [
-      "Developed ML models for sales prediction and trend analysis using historical data",
-      "Implemented customer segmentation and behavior analysis for enhanced user experience",
-      "Created data visualization dashboards for intuitive presentation of insights",
-      "Utilized advanced ML techniques for pattern recognition and predictive analytics"
     ]
   },
   {
