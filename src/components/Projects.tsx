@@ -1,6 +1,7 @@
 import { PROJECTS } from '@/lib/constants';
 import { ExternalLink, Github, Code } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
+import { SimpleParticles } from './ui/simple-particles';
 import './Projects.css';
 
 const Projects = () => {
@@ -11,6 +12,14 @@ const Projects = () => {
       animation="animate-fade-in"
     >
       <div className="projects-background"></div>
+      
+      {/* Interactive Particles for Projects Section */}
+      <SimpleParticles
+        className=""
+        quantity={35}
+        color="#f59e0b"
+        size={2}
+      />
       
       <div className="projects-header">
         <span className="section-subtitle">Featured Work</span>

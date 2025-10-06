@@ -1,0 +1,47 @@
+/* ===============================================
+   SIMPLE PARTICLES INTEGRATION
+   =============================================== */
+
+/* Global Particles Integration */
+.section-container {
+  position: relative !important;
+  overflow: hidden;
+}
+
+.section-container canvas {
+  opacity: 0.9 !important;
+  transition: opacity 0.3s ease;
+  z-index: 1 !important;
+}
+
+/* Ensure content appears above particles */
+.section-container > *:not(.absolute) {
+  position: relative;
+  z-index: 10;
+}
+
+/* Dark Mode Particles */
+.dark .section-container canvas,
+html[data-theme="dark"] .section-container canvas {
+  opacity: 0.8;
+}
+
+/* Responsive Particles */
+@media (max-width: 768px) {
+  .section-container canvas {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-container canvas {
+    opacity: 0.3;
+  }
+}
+
+/* Accessibility - Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .section-container canvas {
+    opacity: 0.1;
+  }
+}

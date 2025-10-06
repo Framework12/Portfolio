@@ -1,5 +1,7 @@
 import { User, MapPin, Calendar, Award } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
+import SimpleScrollAnimation from './SimpleScrollAnimation';
+import { SimpleParticles } from './ui/simple-particles';
 import './About.css';
 import { useEffect, useRef, useState } from 'react';
 import profileImg from '../assets/image.jpeg'
@@ -61,8 +63,17 @@ const About = () => {
 
   return (
     <AnimatedSection id="about" className="about-section section-container">
+      
+      {/* Optimized Particles for About Section */}
+      <SimpleParticles
+        className=""
+        quantity={30}
+        color="#8b5cf6"
+        size={2}
+      />
+      
       <div className="about-grid">
-        <div className="about-image-container">
+        <SimpleScrollAnimation className="about-image-container" delay={200}>
           <div
             className="about-profile-image"
             ref={profileRef}
@@ -83,54 +94,74 @@ const About = () => {
             style={{ transform: `rotate(-12deg) translate(${mousePosition.x * 20}px, ${mousePosition.y * 20}px)` }}
           ></div>
 
-          <div className="about-info-card glass animate-float" ref={el => infoCardsRef.current[0] = el}>
-            <div className="about-info-content">
-              <MapPin className="about-info-icon" size={18} />
-              <span>Innovative</span>
+          <SimpleScrollAnimation delay={400}>
+            <div className="about-info-card glass animate-float">
+              <div className="about-info-content" ref={el => infoCardsRef.current[0] = el}>
+                <MapPin className="about-info-icon" size={18} />
+                <span>Innovative</span>
+              </div>
             </div>
-          </div>
-          <div className="about-info-card glass animate-float delay-200" ref={el => infoCardsRef.current[1] = el}>
-            <div className="about-info-content">
-              <Calendar className="about-info-icon" size={18} />
-              <span>Technology</span>
+          </SimpleScrollAnimation>
+          
+          <SimpleScrollAnimation delay={500}>
+            <div className="about-info-card glass animate-float delay-200">
+              <div className="about-info-content" ref={el => infoCardsRef.current[1] = el}>
+                <Calendar className="about-info-icon" size={18} />
+                <span>Technology</span>
+              </div>
             </div>
-          </div>
-          <div className="about-info-card glass animate-float delay-300" ref={el => infoCardsRef.current[2] = el}>
-            <div className="about-info-content">
-              <Award className="about-info-icon" size={18} />
-              <span>Problem Solving</span>
+          </SimpleScrollAnimation>
+          
+          <SimpleScrollAnimation delay={600}>
+            <div className="about-info-card glass animate-float delay-300">
+              <div className="about-info-content" ref={el => infoCardsRef.current[2] = el}>
+                <Award className="about-info-icon" size={18} />
+                <span>Problem Solving</span>
+              </div>
             </div>
-          </div>
-        </div>
+          </SimpleScrollAnimation>
+        </SimpleScrollAnimation>
 
         {/* Right Column - Text Content */}
-        <div className="about-content">
-          <div className="about-title-container">
+        <SimpleScrollAnimation className="about-content" delay={300}>
+          <SimpleScrollAnimation className="about-title-container" delay={400}>
             <span className="section-subtitle about-subtitle-animated">About Me</span>
             <h2 className="section-title about-title-animated">Creating Innovative Solutions with Code</h2>
-          </div>
+          </SimpleScrollAnimation>
+          
           <div className="about-text-content">
-            <p className="about-text about-text-animated">
-             I'm a dedicated full stack developer with hands-on expertise in React.js, Node.js, and machine learning. I specialize in crafting responsive, scalable web applications and integrating intelligent AI-driven solutions to address real-world challenges effectively.
-            </p>
-            <p className="about-text about-text-animated delay-100">
-             My journey in software development began at UIET,Panjab University, where I built a strong foundation in information technology. Since then, I’ve collaborated with diverse organizations, continually sharpening my frontend and backend development skills through real-world projects and challenges.
-            </p>
-            <p className="about-text about-text-animated delay-200">
-            I take pride in building efficient, scalable, and user-centric applications. Whether it’s developing high-performance React interfaces, integrating intelligent AI models, or streamlining backend systems, I’m driven by a commitment to deliver reliable, impactful solutions in every project I undertake.
-            </p>
-            <div className="about-resume-button about-button-animated delay-300">
-              <a 
-                href="/resume.jpg" 
-                download="chandan_fulvariya_resume.jpg" 
-                className="portfolio-button about-download-button"
-              >
-                Download Resume
-                <span className="about-button-icon"></span>
-              </a>
-            </div>
+            <SimpleScrollAnimation delay={500}>
+              <p className="about-text about-text-animated">
+               I'm a dedicated full stack developer with hands-on expertise in React.js, Node.js, and machine learning. I specialize in crafting responsive, scalable web applications and integrating intelligent AI-driven solutions to address real-world challenges effectively.
+              </p>
+            </SimpleScrollAnimation>
+            
+            <SimpleScrollAnimation delay={600}>
+              <p className="about-text about-text-animated delay-100">
+               My journey in software development began at UIET,Panjab University, where I built a strong foundation in information technology. Since then, I've collaborated with diverse organizations, continually sharpening my frontend and backend development skills through real-world projects and challenges.
+              </p>
+            </SimpleScrollAnimation>
+            
+            <SimpleScrollAnimation delay={700}>
+              <p className="about-text about-text-animated delay-200">
+              I take pride in building efficient, scalable, and user-centric applications. Whether it's developing high-performance React interfaces, integrating intelligent AI models, or streamlining backend systems, I'm driven by a commitment to deliver reliable, impactful solutions in every project I undertake.
+              </p>
+            </SimpleScrollAnimation>
+            
+            <SimpleScrollAnimation delay={800}>
+              <div className="about-resume-button about-button-animated delay-300">
+                <a 
+                  href="/resume.jpg" 
+                  download="chandan_fulvariya_resume.jpg" 
+                  className="portfolio-button about-download-button"
+                >
+                  Download Resume
+                  <span className="about-button-icon"></span>
+                </a>
+              </div>
+            </SimpleScrollAnimation>
           </div>
-        </div>
+        </SimpleScrollAnimation>
       </div>
     </AnimatedSection>
   );

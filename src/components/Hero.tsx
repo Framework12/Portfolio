@@ -1,6 +1,8 @@
 
 import { ArrowDown } from 'lucide-react';
 import { useEffect, useState, useRef } from 'react';
+import { BackgroundPathsOnly } from '@/components/ui/background-paths';
+import { SimpleParticles } from '@/components/ui/simple-particles';
 import './Hero.css';
 
 const Hero = () => {
@@ -122,6 +124,7 @@ const Hero = () => {
     <section id="hero" className="hero-section">
       <div className="hero-background">
         <div className="hero-spotlight" aria-hidden="true"></div>
+        
         {/* Background gradient overlay with dynamic mouse movement */}
         <div 
           className="hero-background-overlay"
@@ -130,8 +133,21 @@ const Hero = () => {
           }}
         ></div>
         
+        {/* BackgroundPaths Component - Subtle animated paths */}
+        <BackgroundPathsOnly 
+          className="z-0"
+        />
+        
+        {/* Interactive Particles */}
+        <SimpleParticles
+          className=""
+          quantity={25}
+          color="#6366f1"
+          size={2}
+        />
+        
         {/* Floating elements */}
-        <div className="hero-floating-elements">
+        <div className="hero-floating-elements z-[2]">
           <div className="hero-floating-circle hero-circle-1"></div>
           <div className="hero-floating-circle hero-circle-2"></div>
           <div className="hero-floating-square"></div>

@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { CONTACT_INFO } from "@/lib/constants";
 import AnimatedSection from "./AnimatedSection";
+import { SimpleParticles } from "./ui/simple-particles";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
 import "./Contact.css";
@@ -159,6 +160,14 @@ const Contact = () => {
       className="contact-section section-container"
       animation="animate-scale-in"
     >
+      {/* Interactive Particles for Contact Section */}
+      <SimpleParticles
+        className=""
+        quantity={15}
+        color="#ef4444"
+        size={2}
+      />
+      
       <div className="contact-header">
         <h2 className="section-title">Contact Me</h2>
         <span className="section-subtitle">Get In Touch</span>

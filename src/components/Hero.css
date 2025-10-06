@@ -56,6 +56,7 @@ html[data-theme="dark"] {
   position: absolute;
   inset: 0;
   z-index: -1;
+  overflow: hidden;
 }
 
 .hero-background-overlay {
@@ -75,6 +76,53 @@ html[data-theme="dark"] .hero-background-overlay {
   padding-inline: 1rem;
   position: relative;
   z-index: 10;
+}
+
+/* Enhanced BackgroundPaths integration with faster waves */
+.hero-background .background-paths-only {
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+  filter: blur(0.3px);
+  animation: wave-breathe 8s ease-in-out infinite;
+}
+
+.dark .hero-background .background-paths-only,
+html[data-theme="dark"] .hero-background .background-paths-only {
+  opacity: 0.8;
+  mix-blend-mode: screen;
+  filter: blur(0.2px);
+}
+
+/* Interactive Particles Integration */
+.hero-background canvas {
+  opacity: 0.7;
+  mix-blend-mode: normal;
+}
+
+.dark .hero-background canvas,
+html[data-theme="dark"] .hero-background canvas {
+  opacity: 0.9;
+  mix-blend-mode: screen;
+}
+
+/* Faster breathing animation for the entire wave system */
+@keyframes wave-breathe {
+  0%, 100% { 
+    transform: scale(1) translateY(0px);
+    opacity: 0.6;
+  }
+  25% { 
+    transform: scale(1.03) translateY(-8px);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: scale(1.05) translateY(-12px);
+    opacity: 1;
+  }
+  75% { 
+    transform: scale(1.03) translateY(-8px);
+    opacity: 0.8;
+  }
 }
 
 .hero-content {

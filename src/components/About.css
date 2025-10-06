@@ -1,15 +1,4 @@
-/* About Component Styles */
-
-/* Dark mode support */
-.dark .about-profile-image,
-html[data-theme="dark"] .about-profile-image {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-}
-
-.dark .about-profile-image:hover,
-html[data-theme="dark"] .about-profile-image:hover {
-  box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.4), 0 15px 15px -5px rgba(0, 0, 0, 0.3);
-}
+/* About Component Styles - Optimized */
 .about-section {
   padding: 5rem 0;
 }
@@ -262,8 +251,9 @@ html[data-theme="dark"] .about-profile-image:hover {
 }
 
 .about-text {
-  font-size: 1.125rem;
   color: hsl(var(--muted-foreground));
+  line-height: 1.6;
+  font-size: 1.125rem;
   margin-bottom: 1.5rem;
   position: relative;
   padding-left: 1rem;

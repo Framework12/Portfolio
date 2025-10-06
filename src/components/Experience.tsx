@@ -1,6 +1,7 @@
 import { EXPERIENCES } from '@/lib/constants';
 import { ChevronRight, MapPin, Calendar } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
+import { SimpleParticles } from './ui/simple-particles';
 import { useState } from 'react';
 import './Experience.css';
 
@@ -13,6 +14,14 @@ const Experience = () => {
       className="experience-section section-container"
       animation="animate-slide-right"
     >
+      {/* Interactive Particles for Experience Section */}
+      <SimpleParticles
+        className=""
+        quantity={20}
+        color="#6366f1"
+        size={2}
+      />
+      
       <div className="experience-header">
         <span className="section-subtitle" role="text">My Journey</span>
         <h2 className="section-title">Professional Experience</h2>

@@ -1,6 +1,8 @@
 
 import { SKILLS } from '@/lib/constants';
 import AnimatedSection from './AnimatedSection';
+import SimpleScrollAnimation from './SimpleScrollAnimation';
+import { SimpleParticles } from './ui/simple-particles';
 import { useState } from 'react';
 import * as LucideIcons from 'lucide-react';
 import './Skills.css';
@@ -16,13 +18,21 @@ const Skills = () => {
     >
       <div className="skills-background"></div>
       
-      <div className="skills-header">
+      {/* Interactive Particles for Skills Section */}
+      <SimpleParticles
+        className=""
+        quantity={25}
+        color="#10b981"
+        size={2}
+      />
+      
+      <SimpleScrollAnimation className="skills-header" delay={200}>
         <span className="skills-subtitle animate-slide-down">My Expertise</span>
         <h2 className="skills-title animate-slide-up delay-100">Skills & Technologies</h2>
         <p className="skills-description animate-fade-in delay-200">
           Here are the technologies and tools I've mastered throughout my journey as a software developer.
         </p>
-      </div>
+      </SimpleScrollAnimation>
       
       <div className="skills-grid">
         {SKILLS.map((skill, index) => {

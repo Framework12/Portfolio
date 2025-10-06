@@ -1,6 +1,7 @@
 import { EDUCATION } from '@/lib/constants';
 import { GraduationCap, ChevronRight, Calendar } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
+import { SimpleParticles } from './ui/simple-particles';
 import './Education.css';
 
 const Education = () => {
@@ -10,6 +11,14 @@ const Education = () => {
       className="education-section section-container"
       animation="animate-slide-left"
     >
+      {/* Interactive Particles for Education Section */}
+      <SimpleParticles
+        className=""
+        quantity={20}
+        color="#3b82f6"
+        size={2}
+      />
+      
       <div className="education-header">
         <h2 className="section-title">Education & Qualifications</h2>
         <span className="section-subtitle">My Academic Journey</span>
