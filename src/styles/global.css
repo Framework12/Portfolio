@@ -8,6 +8,15 @@
   --portfolio-navy: #2A3950;
 }
 
+/* Dark theme overrides for portfolio color tokens */
+html[data-theme="dark"] {
+  --portfolio-peach: #3A2A24; /* muted peach */
+  --portfolio-sage: #20322B; /* darker sage */
+  --portfolio-cream: #0F1724; /* dark card/cream replacement */
+  --portfolio-lavender: #9090C8; /* softer lavender */
+  --portfolio-navy: #E6EEF8; /* light text for dark bg */
+}
+
 .section-container {
   max-width: 1280px;
   margin: 0 auto;

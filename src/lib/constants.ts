@@ -10,9 +10,9 @@ import internseliteLogo from '../assets/internselite-logo.jpg';
 import nrgLogo from '../assets/nrg-logo.jpg';
 import universityLogo from '../assets/university-logo.webp';
 import socialioImage from '../assets/socialio.png';
-import ottImage from '../assets/ott .png';
+import ottImage from '../assets/ott.png';
 import bytepulseImage from '../assets/bytepulse.png';
-import bookExchangeImage from '../assets/bookExchnage.png';
+import bookExchangeImage from '../assets/bookExchange.png';
 import dashboardImage from '../assets/Dashboard.png';
 import healthPlusImage from '../assets/HealthPlus.png';
 

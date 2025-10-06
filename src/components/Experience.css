@@ -18,7 +18,7 @@
 .section-title {
   font-size: 2.25rem;
   font-weight: 700;
-  color: var(--portfolio-navy);
+  color: hsl(var(--foreground));
   margin: 0;
   order: 2;
   position: relative;
@@ -29,8 +29,8 @@
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--portfolio-navy);
-  background: rgba(var(--portfolio-navy-rgb), 0.08);
+  color: hsl(var(--primary));
+  background: hsl(var(--primary) / 0.1);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   display: inline-block;
@@ -53,7 +53,7 @@
 .experience-description {
   max-width: 36rem;
   margin: 1.5rem auto 0;
-  color: #4b5563;
+  color: hsl(var(--muted-foreground));
   font-size: 1.125rem;
   line-height: 1.7;
   order: 3;
@@ -106,9 +106,9 @@
 .experience-card {
   padding: 1.75rem;
   margin-bottom: 1.5rem;
-  background-color: white;
+  background-color: hsl(var(--card));
   border-radius: 0.75rem;
-  border: 1px solid rgba(var(--portfolio-navy-rgb), 0.08);
+  border: 1px solid hsl(var(--border));
   box-shadow: 
     0 4px 6px -1px rgba(0, 0, 0, 0.05),
     0 2px 4px -1px rgba(0, 0, 0, 0.03);
@@ -150,8 +150,8 @@
   height: 56px;
   border-radius: 10px;
   overflow: hidden;
-  background: white;
-  border: 1px solid rgba(var(--portfolio-navy-rgb), 0.08);
+  background: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
   transition: transform 0.2s ease;
   flex-shrink: 0;
 }
@@ -175,7 +175,7 @@
   align-items: center;
   gap: 1rem;
   font-size: 0.875rem;
-  color: #6b7280;
+  color: hsl(var(--muted-foreground));
 }
 
 .company-location,
@@ -188,7 +188,7 @@
 .experience-company {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--portfolio-navy);
+  color: hsl(var(--foreground));
   margin: 0;
 }
 
@@ -196,18 +196,18 @@
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #1f2937;
+  color: hsl(var(--foreground));
 }
 
 .experience-description {
-  color: #4b5563;
+  color: hsl(var(--muted-foreground));
   margin-bottom: 1.25rem;
   line-height: 1.6;
 }
 
 /* Achievements section */
 .achievements-container {
-  border-top: 1px solid rgba(var(--portfolio-navy-rgb), 0.08);
+  border-top: 1px solid hsl(var(--border));
   padding-top: 1rem;
   transition: all 0.3s ease;
 }
@@ -217,7 +217,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #6b7280;
+  color: hsl(var(--muted-foreground));
   margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
@@ -228,8 +228,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(var(--portfolio-peach-rgb), 0.1);
-  color: var(--portfolio-navy);
+  background: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
   font-size: 0.75rem;
   font-weight: 500;
   width: 1.5rem;
@@ -269,14 +269,14 @@
 }
 
 .experience-achievement-icon {
-  color: var(--portfolio-navy);
+  color: hsl(var(--primary));
   margin-top: 0.25rem;
   flex-shrink: 0;
   opacity: 0.8;
 }
 
 .experience-achievement-text {
-  color: #4b5563;
+  color: hsl(var(--muted-foreground));
   line-height: 1.5;
 }
 

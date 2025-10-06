@@ -9,7 +9,7 @@
   position: absolute;
   inset: 0;
   z-index: -10;
-  background: radial-gradient(circle, white, #f9fafb);
+  background: radial-gradient(circle, hsl(var(--background)), hsl(var(--muted) / 0.3));
   opacity: 0.5;
 }
 
@@ -21,7 +21,7 @@
 .skills-title {
   font-size: 2.25rem;
   font-weight: 700;
-  color: var(--portfolio-navy);
+  color: hsl(var(--foreground));
   margin-bottom: 1rem;
 }
 
@@ -29,13 +29,13 @@
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #6b7280;
+  color: hsl(var(--muted-foreground));
 }
 
 .skills-description {
   max-width: 42rem;
   margin: 1rem auto 0;
-  color: #4b5563;
+  color: hsl(var(--muted-foreground));
   font-size: 1.125rem;
 }
 
@@ -62,7 +62,8 @@
   padding: 1.5rem;
   position: relative;
   overflow: hidden;
-  border: 1px solid #f3f4f6;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
   transition: all 0.3s ease;
   height: 100%;
 }
@@ -115,7 +116,7 @@
 .skill-category {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--portfolio-navy);
+  color: hsl(var(--foreground));
 }
 
 .skill-list {
@@ -136,6 +137,6 @@
 }
 
 .skill-item-icon {
-  color: var(--portfolio-navy);
+  color: hsl(var(--primary));
   transition: all 0.3s ease;
 }

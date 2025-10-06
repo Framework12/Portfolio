@@ -158,7 +158,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white overflow-hidden">
+    <div className="min-h-screen bg-background overflow-hidden">
       {/* Three.js Background */}
       <ThreeScene />
       
@@ -175,9 +175,9 @@ const Index = () => {
       </main>
       
       {/* Footer */}
-      <footer className="bg-white py-8 border-t border-gray-100">
+      <footer className="bg-background py-8 border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gray-600">
+          <p className="text-muted-foreground">
             &copy; {new Date().getFullYear()} Chandan Fulvariya. All Rights Reserved.
           </p>
         </div>
